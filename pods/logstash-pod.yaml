@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: logstash-pod
+  labels:
+    name: logstash
+spec:
+  containers:
+    - name: logstash
+      image: logstash

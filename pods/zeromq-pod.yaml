@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: zeromq-pod
+  labels:
+    name: zeromq
+spec:
+  containers:
+    - name: zeromq
+      image: zeromq/zeromq
+      resources:
+        limits :
+          cpu: 1
+      ports:
+        - containerPort: 5559
+          name: frontend-port
+          protocol: TCP 
+        - containerPort: 5560
+          name: backend-port
+          protocol: TCP
+#    - name: beaver
+#    #      image: ombitron/docker-beaver
+#    #      resources:
+#    #        limits :
+#    #          cpu: 0.5
+#    #      ports:
+#    #        - containerPort: 9000
